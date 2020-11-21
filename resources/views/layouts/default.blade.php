@@ -26,7 +26,6 @@
     <div id="right-panel" class="right-panel">
         {{--  navbar  --}}
         @include('includes.navbar')
-
         <div class="content">
             {{--  content  --}}
             @yield('content')
