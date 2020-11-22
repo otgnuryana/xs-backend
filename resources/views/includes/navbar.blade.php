@@ -18,9 +18,8 @@
                 </a>
 
                 <div class="user-menu dropdown-menu">
-                    <button class="nav-link" action="#"><i class="fa fa-power -off"></i>Logout</button>
+                    <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
                 </div>
-
             </div>
 
 
