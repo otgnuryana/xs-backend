@@ -24,7 +24,7 @@ Route::middleware(['auth:sanctum', 'verified'])
         Route::get('/dashboard', function () {
             return view('pages.dashboard');
         })->name('dashboard');
-
+        Route::redirect('/', '/dashboard');
         Route::get('/products/{id}/gallery', [ProductController::class, 'gallery'])
             ->name('products.gallery');
         Route::resource('/products', ProductController::class);
