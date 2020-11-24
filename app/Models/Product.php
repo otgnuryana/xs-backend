@@ -18,6 +18,6 @@ class Product extends Model
 
     public function galleries()
     {
-        // return $this->hasmany(ProductGallery::class, 'products_id');
+        return $this->hasmany(ProductGallery::class, 'products_id');
     }
 }
