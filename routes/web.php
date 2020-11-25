@@ -22,9 +22,7 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->group(function () {
-        Route::get('/dashboard', function () {
-            return view('pages.dashboard');
-        })->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::redirect('/', '/dashboard');
         Route::get('/products/{id}/gallery', [ProductController::class, 'gallery'])
             ->name('products.gallery');
