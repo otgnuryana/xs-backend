@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 
@@ -27,6 +28,10 @@ Route::middleware(['auth:sanctum', 'verified'])
         Route::redirect('/', '/dashboard');
         Route::get('/products/{id}/gallery', [ProductController::class, 'gallery'])
             ->name('products.gallery');
-        Route::resource('/products', ProductController::class);
-        Route::resource('/product-galleries', ProductGalleryController::class);
+        Route::resource('products', ProductController::class);
+        Route::resource('product-galleries', ProductGalleryController::class);
+
+        Route::get('/transactions/{id}/set-status', [TransactionController::class, 'setStatus'])
+            ->name('transactions.status');
+        Route::resource('transactions', TransactionController::class);
     });
