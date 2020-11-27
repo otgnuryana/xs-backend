@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('products', [App\Http\Controllers\API\ProductController::class, 'all']);
+Route::get('transactions/{id}', [App\Http\Controllers\API\TransactionController::class, 'get']);
+Route::post('checkout', [App\Http\Controllers\API\CheckoutController::class, 'checkout']);

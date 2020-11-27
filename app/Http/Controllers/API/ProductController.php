@@ -20,10 +20,7 @@ class ProductController extends Controller
         $price_from = $request->input('price_from');
         $price_to = $request->input('price_to');
 
-        //fungsi untuk ngambil data
-        // sama seperti mengambil data di cms hanya saja disini tidak menggunakan view tapi menggunakan respon formatter
         if ($id) {
-            // cari data dengan id ini cari dengan galleries
             $product = Product::with('galleries')->find($id);
 
             if ($product)
@@ -32,7 +29,6 @@ class ProductController extends Controller
                 return ResponseFormatter::error(null, 'Data Produk tidak ditemukan', 404);
         }
         if ($slug) {
-            // cari data dengan id ini cari dengan galleries
             $product = Product::with('galleries')->where('slug', $slug)->first();
 
             if ($product)
